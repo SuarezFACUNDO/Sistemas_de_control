@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triangulos: hipotenusa, perimetro y superficie</title>
+  </head>
+  <body>
+    <script>
+      var base = Number(prompt('Base del triángulo:'))
+      var altura = Number(prompt('Altura del triángulo'))
+
+      function calcularHipotenusa(b, h) {
+        return Math.sqrt(b * b + h * h)
+      }
+
+      function calcularPerimetro(b, h) {
+        return b + h + calcularHipotenusa(b, h)
+      }
+
+      function calcularSuperficie(b, h) {
+        return (b * h) / 2
+      }
+
+      var hipotenusa = calcularHipotenusa(base, altura).toFixed(2)
+      var perimetro = calcularPerimetro(base, altura).toFixed(2)
+      var superficie = calcularSuperficie(base, altura).toFixed(2)
+
+      document.write(`
+        <p>La hipotenusa es: ${hipotenusa}</p>
+        <p>El perimetro es: ${perimetro}</p>
+        <p>La superficie es: ${superficie}</p>
+      `)
+    </script>
+	<p><a href="../index.html">volver</a></p>
+  </body>
+</html>
