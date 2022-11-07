@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energia potencial y velocidad</title>
+  </head>
+  <body>
+    <script>
+      const GRAVEDAD = 9.8
+
+      var masa = Number(prompt('Masa en kg:'))
+      var altura = Number(prompt('Altura en m:'))
+
+      function calcularEp(m, h) {
+        return m * h * GRAVEDAD
+      }
+
+      function calcularVelocidadAlSuelo(ep, m) {
+        return Math.sqrt((2 * ep) / m)
+      }
+
+      var ep = calcularEp(masa, altura)
+      var v = calcularVelocidadAlSuelo(ep, masa)
+
+      document.write(`
+        <p>La energia potencial es: ${ep}</p>
+        <p>La velocidad al llegar al suelo es: ${v} (${
+        v > 100 ? 'que rapido...' : 'va lento'
+      })</p>
+      `)
+    </script>
+	<p><a href="../index.html">volver</a></p>
+  </body>
+</html>
